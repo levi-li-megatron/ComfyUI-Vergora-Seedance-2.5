@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- Replaced the package icon with the shared Vergora Wan3 icon.
+
 ## 0.1.1
 
 - Updated the Comfy Registry package icon to the official Vergora logo.

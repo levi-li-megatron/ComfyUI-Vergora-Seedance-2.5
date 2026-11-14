@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Updated the Comfy Registry package icon to the official Vergora logo.
+
 ## 0.1.0
 
 - Split Seedance 2.5 from Seedance 2.0 into an independent custom node package.

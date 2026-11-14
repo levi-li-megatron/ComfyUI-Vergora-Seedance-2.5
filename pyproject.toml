@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-vergora-seedance-2-5"
-version = "0.1.0"
+version = "0.1.1"
 description = "ComfyUI node for BytePlus Seedance 2.5 video generation through Vergora"
 requires-python = ">=3.10"
 license = { text = "MIT" }

@@ -1,0 +1,58 @@
+# ---------------------------------------------------------------------------
+# Vergora Seedance 2.5 ComfyUI node configuration
+#
+# 1. Copy this file to config.ini
+#      Windows:       copy config.ini.example config.ini
+#      macOS/Linux:   cp config.ini.example config.ini
+# 2. Fill in KEY with a Vergora API key
+# 3. Restart ComfyUI
+#
+# config.ini is ignored by git. VERGORA_API_KEY, VERGORA_BASE_URL and
+# VERGORA_REQUEST_FORMAT take precedence over this file.
+# ---------------------------------------------------------------------------
+
+[API]
+
+# Vergora API base URL. Do not add a trailing slash.
+BASE_URL = https://api.vergora.ai/v1
+
+# Your Vergora key. Never commit this file with a real key.
+KEY =
+
+# Request body shape used with POST /v1/videos.
+#   auto    - try flat first; retry once only when the gateway explicitly says
+#             content[] is required or a flat field is unknown
+#   flat    - gateway fields such as prompt, first_frame, reference_images
+#   content - native BytePlus content[] items with roles
+REQUEST_FORMAT = auto
+
+[RUNTIME]
+
+# Seconds between task status polls.
+POLL_INTERVAL = 10
+
+# Maximum seconds to wait for the gateway to accept POST /v1/videos.
+# Video-input tasks can spend a while downloading and estimating input tokens.
+# A timeout is still not retried automatically because the task may already exist.
+# 提交接口最长等待秒数；视频素材可能在这里被上游下载和估算 token。
+# 超时仍不会自动重试，因为任务可能已经创建。
+SUBMIT_TIMEOUT = 300
+
+# Maximum seconds to wait for a task. Seedance 2.5 30-second clips can take a while.
+TIMEOUT = 2400
+
+# Leave empty to save into ComfyUI's output directory.
+OUTPUT_DIR =
+
+# ---------------------------------------------------------------------------
+# 中文说明
+#
+# 1. 将本文件复制为 Seedance 2.5 适配器目录中的 config.ini。
+# 2. 在 KEY 后填写 Vergora API Key，密钥不会作为节点控件，也不会写进工作流。
+# 3. 重启 ComfyUI。
+#
+# REQUEST_FORMAT 默认 auto：先尝试与现有 Vergora /v1/videos 网关一致的 flat 字段；
+# 只有网关明确提示缺少 content[] 或某字段未知时，才会自动用 content[] 重试一次。
+# 其他 400/5xx 不会重试，避免重复建任务。也可手动设为 flat 或 content。
+# 环境变量 VERGORA_API_KEY / VERGORA_BASE_URL / VERGORA_REQUEST_FORMAT 的优先级高于本文件。
+# ---------------------------------------------------------------------------

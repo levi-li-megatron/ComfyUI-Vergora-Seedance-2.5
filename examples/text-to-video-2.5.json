@@ -1,0 +1,290 @@
+{
+  "id": "seedance-vergoraseedance25",
+  "revision": 0,
+  "last_node_id": 1,
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "VergoraSeedance25",
+      "pos": [
+        160,
+        100
+      ],
+      "size": [
+        480,
+        760
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "reference_images",
+          "name": "reference_images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "resolution",
+          "name": "resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "ratio",
+          "name": "ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "ratio"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "duration",
+          "name": "duration",
+          "type": "INT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "generate_audio",
+          "name": "generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "generate_audio"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "return_last_frame",
+          "name": "return_last_frame",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "return_last_frame"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "output_format",
+          "name": "output_format",
+          "type": "COMBO",
+          "widget": {
+            "name": "output_format"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "omni_reference_task_type",
+          "name": "omni_reference_task_type",
+          "type": "COMBO",
+          "widget": {
+            "name": "omni_reference_task_type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "draft",
+          "name": "draft",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "draft"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "first_frame_url",
+          "name": "first_frame_url",
+          "type": "STRING",
+          "widget": {
+            "name": "first_frame_url"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "last_frame_url",
+          "name": "last_frame_url",
+          "type": "STRING",
+          "widget": {
+            "name": "last_frame_url"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "reference_image_urls",
+          "name": "reference_image_urls",
+          "type": "STRING",
+          "widget": {
+            "name": "reference_image_urls"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "reference_video_urls",
+          "name": "reference_video_urls",
+          "type": "STRING",
+          "widget": {
+            "name": "reference_video_urls"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "reference_audio_urls",
+          "name": "reference_audio_urls",
+          "type": "STRING",
+          "widget": {
+            "name": "reference_audio_urls"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "extra_json",
+          "name": "extra_json",
+          "type": "STRING",
+          "widget": {
+            "name": "extra_json"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "draft_task_id",
+          "name": "draft_task_id",
+          "type": "STRING",
+          "widget": {
+            "name": "draft_task_id"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "video_path",
+          "name": "video_path",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "localized_name": "task_id",
+          "name": "task_id",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "localized_name": "video_url",
+          "name": "video_url",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "localized_name": "last_frame_path",
+          "name": "last_frame_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VergoraSeedance25"
+      },
+      "widgets_values": [
+        "A cinematic sunrise over a quiet lake, a single red paper boat drifts into frame",
+        "seedance-2.5",
+        "1080p",
+        "16:9",
+        5,
+        true,
+        false,
+        false,
+        "mp4",
+        "auto",
+        false,
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "prompt": "A cinematic sunrise over a quiet lake, a single red paper boat drifts into frame",
+        "model": "seedance-2.5",
+        "resolution": "1080p",
+        "ratio": "16:9",
+        "duration": 5,
+        "generate_audio": true,
+        "watermark": false,
+        "return_last_frame": false,
+        "output_format": "mp4",
+        "omni_reference_task_type": "auto",
+        "draft": false,
+        "first_frame_url": "",
+        "last_frame_url": "",
+        "reference_image_urls": "",
+        "reference_video_urls": "",
+        "reference_audio_urls": "",
+        "extra_json": "",
+        "draft_task_id": ""
+      }
+    }
+  ],
+  "links": [],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0,
+      "offset": [
+        0,
+        0
+      ]
+    }
+  },
+  "version": 0.4
+}

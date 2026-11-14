@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.mp4
+*.mov
+*.webm
+config.ini
+node.zip
+output/
+_research/
+.DS_Store
+.idea/
+.vscode/

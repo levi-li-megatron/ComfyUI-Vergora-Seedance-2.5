@@ -4,6 +4,13 @@ ComfyUI custom node for **Seedance 2.5** through the Vergora API. This package
 exports only `VergoraSeedance25`; Seedance 2.0 / Fast / Mini are installed from a
 separate custom node folder so ComfyUI never mixes incompatible parameter sets.
 
+## Demo / 演示
+
+[![Seedance 2.5 demo](demo/seedance-2.5-preview.jpg)](https://github.com/levi-li-megatron/ComfyUI-Vergora-Seedance-2.5/releases/download/demo-v1.0.0/vergora_seedance_task_RkI_1794654158.mp4)
+
+Click the cover to open the generated Seedance 2.5 demo in the GitHub Release.
+点击封面可打开由 Seedance 2.5 生成的演示视频。
+
 ## Features
 
 - Text-to-video

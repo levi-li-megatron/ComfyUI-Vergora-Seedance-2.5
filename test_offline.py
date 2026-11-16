@@ -166,6 +166,9 @@ def main():
     # Model IDs copied from the catalog may carry an invisible zero-width space.
     clean, _spec = nodes.model_spec("seedance-2.0-fast\u200b")
     assert clean == "seedance-2.0-fast", repr(clean)
+    assert nodes.extract_task_id(
+        {"id": "task_eoc-test", "task_id": "cgt-upstream-test"}
+    ) == "task_eoc-test"
 
     # Seedance 2.0: flat gateway body, polling, video preview and last frame.
     reset()
@@ -555,7 +558,7 @@ def main():
     def schema_then_success(url, headers, payload, timeout=120):
         schema_calls.append(payload)
         if len(schema_calls) == 1:
-            return 400, '{"error":{"message":"unknown field: prompt"}}'
+            return 400, '{"error":{"message":"unknown field: content"}}'
         return 200, '{"task_info":{"id":"task-auto","status":"pending"}}'
 
     nodes.http_post_json = schema_then_success
@@ -570,8 +573,8 @@ def main():
     }
     run_node(node20, base20())
     assert len(schema_calls) == 2, schema_calls
-    assert "prompt" in schema_calls[0] and "content" not in schema_calls[0], schema_calls
-    assert "content" in schema_calls[1] and "prompt" not in schema_calls[1], schema_calls
+    assert "content" in schema_calls[0] and "prompt" not in schema_calls[0], schema_calls
+    assert "prompt" in schema_calls[1] and "content" not in schema_calls[1], schema_calls
 
     ambiguous_calls = []
 

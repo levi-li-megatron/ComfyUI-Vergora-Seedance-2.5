@@ -250,7 +250,7 @@ def load_config():
     cfg = {
         "base_url": DEFAULT_BASE_URL,
         "api_key": "",
-        "request_format": "auto",
+        "request_format": "content",
         "poll_interval": 10.0,
         "submit_timeout": DEFAULT_SUBMIT_TIMEOUT,
         "timeout": 2400.0,
@@ -728,7 +728,7 @@ def build_payload(
     omni_reference_task_type="auto",
     output_format="mp4",
     extra_json="",
-    request_format="flat",
+    request_format="content",
 ):
     reference_images = list(reference_images or [])
     reference_videos = list(reference_videos or [])
@@ -1332,7 +1332,7 @@ def generate(
     audios = split_uri_lines(reference_audio_urls)
 
     requested_format = cfg["request_format"]
-    effective_format = "flat" if requested_format == "auto" else requested_format
+    effective_format = "content" if requested_format == "auto" else requested_format
     payload_args = (
         prompt,
         clean_model,
@@ -1366,9 +1366,11 @@ def generate(
             raise
         # A schema rejection does not create a task. Retry only this explicit,
         # non-billable mismatch; never retry ambiguous 4xx/5xx submit errors.
-        log("[vergora-seedance] 网关不接受 flat 字段，自动改用 content[] / "
-            "gateway rejected flat fields, retrying with content[]")
-        payload_kwargs["request_format"] = "content"
+        fallback_format = "flat" if request_format == "content" else "content"
+        log("[vergora-seedance] 网关不接受 %s 字段，改用 %s / "
+            "gateway rejected %s fields, retrying with %s"
+            % (request_format, fallback_format, request_format, fallback_format))
+        payload_kwargs["request_format"] = fallback_format
         payload = build_payload(*payload_args, **payload_kwargs)
         request_format = payload_kwargs["request_format"]
         task_id = submit_task(cfg, payload, request_format=request_format)

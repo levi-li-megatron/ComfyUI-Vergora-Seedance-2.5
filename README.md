@@ -104,8 +104,9 @@ VERGORA_REQUEST_FORMAT
 
 ## Request format
 
-`REQUEST_FORMAT=auto` tries flat fields first and retries once with `content[]`
-only when the gateway explicitly reports a missing/unknown schema field. Other
+`content[]` is the default and uses the official BytePlus request shape.
+`REQUEST_FORMAT=auto` also tries `content[]` first and retries once with flat
+fields only when the gateway explicitly rejects the `content[]` schema. Other
 submit errors are never retried, avoiding duplicate tasks and billing.
 
 ## Development
